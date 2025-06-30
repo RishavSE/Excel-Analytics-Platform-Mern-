@@ -1,0 +1,60 @@
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.custom-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #6c63ff;
+  background-color: #fff;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.custom-btn {
+  padding: 8px 14px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #524ae0;
+}

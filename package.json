@@ -1,0 +1,67 @@
+{
+  "name": "my-vite-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "bcryptjs": "^3.0.2",
+    "chart.js": "^4.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^3.0.1",
+    "mongoose": "^8.15.2",
+    "react": "^19.1.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-color": "^2.19.3",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.6.2",
+    "react-toastify": "^11.0.5",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.3",
+    "@types/file-saver": "^2.0.7",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^24.0.1",
+    "@types/react": "^19.1.2",
+    "@types/react-color": "^3.0.13",
+    "@types/react-dom": "^19.1.2",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1",
+    "vite": "^6.3.5"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAJPUT0610/EXCELANALYTICALPLATFORM-LOGINPAGE-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RAJPUT0610/EXCELANALYTICALPLATFORM-LOGINPAGE-/issues"
+  },
+  "homepage": "https://github.com/RAJPUT0610/EXCELANALYTICALPLATFORM-LOGINPAGE-#readme"
+}
