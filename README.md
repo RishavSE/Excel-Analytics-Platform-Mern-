@@ -145,7 +145,6 @@ npm run dev
 ## 📌  Future Enhancements
 
 - [ ] Add AI chart insights (Gemini/OpenAI)
-- [ ] Persist uploaded files in MongoDB
 - [ ] Deploy to Render/Vercel
 - [ ] Create shareable chart links
 - [ ] Show chart previews before rendering
