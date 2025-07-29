@@ -1,11 +1,10 @@
-// AdminPanel.tsx
 import React, { useEffect, useState } from 'react';
 import './adminpannel.css';
 import Sidebar from './sidebar';
 import TopCards from './tocards';
 import UsersTable from './usertable'; // Summary for Dashboard
 import Users from './users';         // Full Data for Users tab
-import { getAllUsers } from '../../api/api';
+import { fetchAllUsersArray } from '../../api/api'; // ✅ updated
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
@@ -23,8 +22,8 @@ const AdminPanel: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await getAllUsers();
-      const updatedUsers = res.data.map((user: any) => ({
+      const data = await fetchAllUsersArray(); // ✅ updated
+      const updatedUsers = data.map((user: any) => ({
         ...user,
         status: user.isActive ? 'Active' : 'Inactive',
       }));
@@ -66,7 +65,6 @@ const AdminPanel: React.FC = () => {
       <Sidebar onSelectTab={setSelectedTab} />
       <main className="admin-panel-main-content">
 
-        {/* ✅ Dashboard Tab */}
         {selectedTab === 'dashboard' && (
           <>
             <div className="admin-panel-cards-row">
@@ -80,15 +78,13 @@ const AdminPanel: React.FC = () => {
           </>
         )}
 
-        {/* ✅ Users Tab */}
         {selectedTab === 'users' && (
           <>
-            <h2 className="section-title"> Users  Data</h2>
-            <Users /> {/* Full data with uploads, last login etc. */}
+            <h2 className="section-title"> Users Data</h2>
+            <Users />
           </>
         )}
 
-        {/* ✅ Settings Tab */}
         {selectedTab === 'settings' && (
           <>
             <h2 className="section-title">Settings</h2>
