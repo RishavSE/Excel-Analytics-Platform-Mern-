@@ -1,38 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './adminpannel.css';
-import { getAllUsers, deleteUser } from '../../api/api';
+import { deleteUser } from '../../api/api';
 
 type User = {
   _id: string;
   email: string;
   role: 'admin' | 'user';
-  isActive?: boolean; // <-- Use backend's isActive field
+  isActive?: boolean;
 };
 
-const UsersTable: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
+interface UsersTableProps {
+  users: User[];
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>;
+}
 
-  const fetchUsers = () => {
-    getAllUsers()
-      .then(res => {
-        const updatedUsers = res.data.map((user: any) => ({
-          ...user,
-          isActive: user.isActive, // coming from backend
-        }));
-        setUsers(updatedUsers);
-      })
-      .catch(err => console.error('Failed to fetch users:', err));
-  };
-
-  useEffect(() => {
-    fetchUsers(); // on mount
-  }, []);
-
+const UsersTable: React.FC<UsersTableProps> = ({ users, setUsers }) => {
   const handleDelete = async (userId: string) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
         await deleteUser(userId);
-        fetchUsers();
+        // ✅ Update state locally instead of refetch
+        setUsers(prev => prev.filter(user => user._id !== userId));
       } catch (error) {
         console.error('❌ Failed to delete user:', error);
         alert('Delete failed. Try again.');
