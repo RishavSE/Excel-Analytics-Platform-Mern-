@@ -1,0 +1,4 @@
+echo "* text=auto" > .gitattributes
+echo "*.ts text eol=lf" >> .gitattributes
+echo "*.js text eol=lf" >> .gitattributes
+echo "*.env text eol=lf" >> .gitattributes
