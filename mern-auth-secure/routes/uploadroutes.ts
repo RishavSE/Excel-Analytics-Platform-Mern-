@@ -19,7 +19,11 @@ interface CustomRequest extends Request {
 router.get("/uploads", getUploadsByEmail);
 
 // ✅ POST: upload and parse Excel
-router.post("/upload", upload.single("file"), async (req: CustomRequest, res: Response) => {
+router.post(
+  "/upload",
+  upload.single("file") as unknown as express.RequestHandler,
+  async (req: CustomRequest, res: Response) => {
+
   try {
     const file = req.file;
     const email = req.body.email;
