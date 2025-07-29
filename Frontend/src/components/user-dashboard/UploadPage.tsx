@@ -5,46 +5,58 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFileExcel } from "react-icons/fa";
 
+// ✅ Base URL - auto switch between local and hosted
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "https://excel-analytics-platform-mern.onrender.com";
+
 const UploadPage: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (fileInputRef.current) fileInputRef.current.click();
+    fileInputRef.current?.click();
   };
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-  const file = event.target.files?.[0];
-  if (!file) return;
+    const file = event.target.files?.[0];
+    if (!file) return;
 
-  const formData = new FormData();
-  formData.append("file", file);
-  formData.append("email", localStorage.getItem("email") || "");
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("email", localStorage.getItem("email") || "");
 
-  try {
-    const res = await axios.post("http://localhost:5000/api/upload", formData);
+    try {
+      const res = await axios.post(`${API_BASE_URL}/api/upload`, formData);
 
-    const newFileData = {
-      filename: file.name,
-      rows: res.data.rows,
-      date: new Date().toLocaleString(),
-      data: res.data.data,
-    };
+      const newFileData = {
+        filename: file.name,
+        rows: res.data.rows,
+        date: new Date().toLocaleString(),
+        data: res.data.data,
+      };
 
-    const previousUploads = JSON.parse(localStorage.getItem("recentUploads") || "[]");
-    localStorage.setItem("recentUploads", JSON.stringify([newFileData, ...previousUploads]));
+      const previousUploads = JSON.parse(localStorage.getItem("recentUploads") || "[]");
+      localStorage.setItem("recentUploads", JSON.stringify([newFileData, ...previousUploads]));
 
-    toast.success("✅ File uploaded successfully!");
+      toast.success("✅ File uploaded successfully!");
 
-     setTimeout(() => navigate("/user-dashboard/home"), 1500);
-  } catch (error) {
-    console.error("❌ Upload failed:", error);
-    toast.error("❌ Upload failed. Please try again.");
-  }
-};
+      setTimeout(() => navigate("/user-dashboard/home"), 1500);
+    } catch (error) {
+      console.error("❌ Upload failed:", error);
+      toast.error("❌ Upload failed. Please try again.");
+    }
+  };
 
   return (
-    <div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", backgroundColor: "#f9f9f9" }}>
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#f9f9f9",
+      }}
+    >
       <div
         onClick={handleClick}
         style={{
