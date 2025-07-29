@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
 import { fetchAllUsersArray } from "../../api/api"; // use the fixed function
 import "./adminpannel.css";
 
