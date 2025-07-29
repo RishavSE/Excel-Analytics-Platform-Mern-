@@ -8,7 +8,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [role] = useState("user");
+  const role = "user";
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
