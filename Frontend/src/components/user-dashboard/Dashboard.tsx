@@ -79,7 +79,7 @@ const Dashboard: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {recentUploads.map((file, index) => (
+              {recentUploads.map((file) => (
                 <tr key={file._id}>
                   <td>{file.filename}</td>
                   <td>{file.rows}</td>
