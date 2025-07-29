@@ -2,9 +2,8 @@ import React, {
   createContext,
   useContext,
   useState,
-  ReactNode,
 } from "react";
-
+import type { ReactNode } from "react";
 // Define types for the context
 type AuthContextType = {
   token: string | null;
