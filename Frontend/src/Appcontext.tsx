@@ -1,10 +1,10 @@
-import React, {
+import {
   createContext,
   useContext,
   useState,
 } from "react";
 import type { ReactNode } from "react";
-// Define types for the context
+
 type AuthContextType = {
   token: string | null;
   role: string | null;
@@ -13,10 +13,8 @@ type AuthContextType = {
   logout: () => void;
 };
 
-// Create context
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// ✅ Named export for Provider
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
   const [role, setRole] = useState<string | null>(localStorage.getItem("role"));
@@ -45,7 +43,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// ✅ Named export for hook (not default!)
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (!context) {
