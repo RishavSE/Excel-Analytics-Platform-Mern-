@@ -60,10 +60,7 @@ const Register = () => {
             required
           />
 
-          <select value={role} onChange={(e) => setRole(e.target.value)}>
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-          </select>
+      
 
           <button type="submit" className="signup-btn">Sign Up</button>
 
