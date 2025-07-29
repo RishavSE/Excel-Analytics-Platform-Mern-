@@ -1,6 +1,6 @@
 // Sidebar.tsx
 import React from 'react';
-import { MdDashboard, MdSettings } from 'react-icons/md';
+import { MdDashboard } from 'react-icons/md';
 import { FaUser } from 'react-icons/fa';
 import './adminpannel.css';
 import { useAuth } from '../../Appcontext';
