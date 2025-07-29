@@ -4,7 +4,7 @@ import API from "../../api/api";
 import "./App.css";
 
 interface UploadFile {
-  _id: string; // ✅ needed for deletion
+  _id: string; 
   filename: string;
   rows: number;
   date: string;
