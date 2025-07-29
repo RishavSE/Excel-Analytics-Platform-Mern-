@@ -1,5 +1,4 @@
-
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom"; // ❌ no BrowserRouter here
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminPannel from "./components/adminpannel/adminpannel1";
@@ -11,30 +10,28 @@ const App = () => {
   const { token, role } = useAuth();
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
 
-        {/* 🔐 Admin Dashboard */}
-        <Route
-          path="/adminpannel1"
-          element={token && role === "admin" ? <AdminPannel /> : <Navigate to="/login" />}
-        />
-        {/* ✅ Admin Users Route */}
-        <Route
-          path="/adminpannel1/users"
-          element={token && role === "admin" ? <Users /> : <Navigate to="/login" />}
-        />
+      {/* 🔐 Admin Dashboard */}
+      <Route
+        path="/adminpannel1"
+        element={token && role === "admin" ? <AdminPannel /> : <Navigate to="/login" />}
+      />
+      {/* ✅ Admin Users Route */}
+      <Route
+        path="/adminpannel1/users"
+        element={token && role === "admin" ? <Users /> : <Navigate to="/login" />}
+      />
 
-        {/* 🔐 User Dashboard */}
-        <Route
-          path="/user-dashboard/*"
-          element={token && role === "user" ? <Dashboard /> : <Navigate to="/login" />}
-        />
-      </Routes>
-    </Router>
+      {/* 🔐 User Dashboard */}
+      <Route
+        path="/user-dashboard/*"
+        element={token && role === "user" ? <Dashboard /> : <Navigate to="/login" />}
+      />
+    </Routes>
   );
 };
 
