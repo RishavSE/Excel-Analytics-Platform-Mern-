@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from "react";
-
+import { createContext, useContext, useState } from "react";
+import type { ReactNode } from 'react';
 type AuthContextType = {
   token: string | null;
   setToken: (token: string | null) => void;
