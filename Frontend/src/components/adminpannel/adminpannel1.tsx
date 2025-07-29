@@ -4,7 +4,7 @@ import Sidebar from './sidebar';
 import TopCards from './tocards';
 import UsersTable from './usertable'; // Summary for Dashboard
 import Users from './users';         // Full Data for Users tab
-import { fetchAllUsersArray } from '../../api/api'; // ✅ updated
+import { fetchAllUsersArray } from '../../api/api';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
@@ -14,6 +14,7 @@ type User = {
   email: string;
   role: 'admin' | 'user';
   status?: string;
+  isActive?: boolean; // ✅ needed to safely read from fetched user object
 };
 
 const AdminPanel: React.FC = () => {
@@ -22,8 +23,8 @@ const AdminPanel: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const data = await fetchAllUsersArray(); // ✅ updated
-      const updatedUsers = data.map((user: any) => ({
+      const data: User[] = await fetchAllUsersArray(); // ✅ cast with inline type
+      const updatedUsers: User[] = data.map(user => ({
         ...user,
         status: user.isActive ? 'Active' : 'Inactive',
       }));
