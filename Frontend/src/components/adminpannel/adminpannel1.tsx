@@ -12,7 +12,7 @@ type User = {
   _id: string;
   name?: string;
   email: string;
-  role: string;
+  role: 'admin' | 'user';
   status?: string;
 };
 
