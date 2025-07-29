@@ -10,4 +10,10 @@ export const loginUser = (
   role: "user" | "admin"
 ) => API.post("/login", { email, password, role });
 
+export const registerUser = (
+  email: string,
+  password: string,
+  role: "user" | "admin"
+) => API.post("/register", { email, password, role });
+
 export const createData = (data: any) => API.post("/create-data", data);
