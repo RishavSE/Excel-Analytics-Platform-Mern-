@@ -66,6 +66,7 @@ const Login = () => {
         setError("❌ Unknown role");
       }
     } catch (err) {
+      console.error("Login error:", err);
       setError("❌ Invalid credentials");
     }
   };
