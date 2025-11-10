@@ -7,14 +7,14 @@ A full-stack MERN application to upload Excel files, parse and visualize them us
 ## 🚀 Features
 
 | Feature                          | Description                                                                 |
-|----------------------------------|-----------------------------------------------------------------------------|
+|----------------------------------|---------------------------------------------------------------------------- |
 | 📂 Excel Upload                  | Upload `.xls` / `.xlsx` files and preview data                             |
 | 📈 Chart Visualizations          | Bar, Line, and Pie charts using Chart.js                                   |
 | 🎨 Color Customization           | Customize chart colors directly from UI                                    |
 | 📊 Filter by Column & Y-Axis     | Select specific columns and Y-axis for more relevant charts                |
 | 🔐 JWT Authentication            | Secure login/register with bcrypt & JWT                                    |
-| 👥 Role-Based Dashboard          | Redirect users/admins to respective dashboards                              |
-| 🧑‍💼 Admin Dashboard             | View users, delete accounts, see activity stats                            |
+| 👥 Role-Based Dashboard          | Redirect users/admins to respective dashboards                             |
+| 🧑‍💼 Admin Dashboard             | View users, delete accounts, see activity stats                              |
 | 🗑️ Delete User                   | Admin can delete any user (removes login access)                           |
 | ✅ User Status                   | See active/inactive status of users                                        |
 | 📊 Upload Statistics             | Total uploads per user + overall total                                     |
