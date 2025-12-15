@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://excel-analytics-platform-mern.onrender.com/api", // 👈 backend server running here
+  baseURL:import.meta.env.VITE_API_BASE_URL, // 👈 backend server running here
 });
 
 export const loginUser = (
