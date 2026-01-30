@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../models/User";
-import Upload from "../models/upload"; // ✅ using email to count uploads
+import Upload from "../models/upload"; 
 
 export const getAllUsersWithUploads = async (req: Request, res: Response) => {
   try {
@@ -11,7 +11,7 @@ export const getAllUsersWithUploads = async (req: Request, res: Response) => {
         const uploadCount = await Upload.countDocuments({ email: user.email });
 
         return {
-          _id: user._id,// handle optional name
+          _id: user._id,
           email: user.email,
           role: user.role,
           uploads: uploadCount,
