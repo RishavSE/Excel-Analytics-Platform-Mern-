@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './adminpannel.css';
 import Sidebar from './sidebar';
 import TopCards from './tocards';
-import UsersTable from './usertable'; // Summary for Dashboard
-import Users from './users';         // Full Data for Users tab
+import UsersTable from './usertable'; 
+import Users from './users';       
 import { fetchAllUsersArray } from '../../api/api';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
