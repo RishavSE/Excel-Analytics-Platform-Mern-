@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API } from "../api/api";
 import { Link } from "react-router-dom";
-import { useAuth } from "../Appcontext"; // ✅ useAuth hook
+import { useAuth } from "../Appcontext";
 import "./index.css";
 
 const Sidebar = () => (
@@ -42,7 +42,7 @@ const Login = () => {
   const [resetMessage, setResetMessage] = useState("");
 
   const navigate = useNavigate();
-  const { login } = useAuth(); // ✅ Context login function
+  const { login } = useAuth(); //  Context login function
 
   const handleRoleToggle = () => {
     setRole(role === "user" ? "admin" : "user");
@@ -54,10 +54,10 @@ const Login = () => {
       const res = await API.post("/login", { email, password, role });
       const { token, role: returnedRole } = res.data;
 
-      // ✅ Save in context (triggers global reactivity)
+      //  Save in context (triggers global reactivity)
       // login(token, returnedRole);
         login(token, returnedRole, email);
-      // ✅ Redirect
+      
       if (returnedRole === "admin") {
         navigate("/adminpannel1");
       } else if (returnedRole === "user") {
@@ -91,7 +91,7 @@ const Login = () => {
         setResetPassword("");
         setResetConfirm("");
         setResetMessage("");
-        alert("✅ Password updated! Please log in.");
+        alert(" Password updated! Please log in.");
       }, 2000);
     } catch {
       setResetMessage("❌ Reset failed");
