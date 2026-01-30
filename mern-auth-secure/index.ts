@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
-app.use("/api", uploadRoutes); // ✅ MOUNT THIS ROUTE
+app.use("/api", uploadRoutes); 
 
 
 mongoose.connect(process.env.MONGO_URI!)
