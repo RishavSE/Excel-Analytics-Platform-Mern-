@@ -14,7 +14,7 @@ type User = {
   email: string;
   role: 'admin' | 'user';
   status?: string;
-  isActive?: boolean; // ✅ needed to safely read from fetched user object
+  isActive?: boolean;
 };
 
 const AdminPanel: React.FC = () => {
@@ -23,7 +23,7 @@ const AdminPanel: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const data: User[] = await fetchAllUsersArray(); // ✅ cast with inline type
+      const data: User[] = await fetchAllUsersArray(); 
       const updatedUsers: User[] = data.map(user => ({
         ...user,
         status: user.isActive ? 'Active' : 'Inactive',
