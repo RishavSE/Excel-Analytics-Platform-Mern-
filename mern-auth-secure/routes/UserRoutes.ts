@@ -1,10 +1,10 @@
 import express from 'express';
 import { User } from '../models/User';
-import Upload from '../models/upload'; // ✅ import Upload model
+import Upload from '../models/upload';
 
 const router = express.Router();
 
-// ✅ GET: All Users with Upload Count
+
 router.get('/users', async (_req, res) => {
   try {
     const users = await User.find();
@@ -33,7 +33,7 @@ router.get('/users', async (_req, res) => {
   }
 });
 
- // ✅ DELETE: User AND their Uploads
+ //  DELETE: User AND their Uploads
 router.delete('/users/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -59,7 +59,7 @@ router.delete('/users/:id', async (req, res) => {
   }
 });
 
-// ✅ GET: User Stats (Total + Active Users)
+//  GET: User Stats (Total + Active Users)
 router.get('/users/stats', async (_req, res) => {
   try {
     const users = await User.find();
