@@ -21,7 +21,7 @@ const Register = () => {
     try {
       const res = await API.post("/register", { email, password, role });
       localStorage.setItem("token", res.data.token);
-      setMessage("✅ Registered successfully!");
+      setMessage(" Registered successfully!");
     } catch (err: any) {
       setMessage(err.response?.data?.message || "❌ Registration failed.");
     }
