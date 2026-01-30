@@ -3,14 +3,14 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { User } from "../models/User";
 
-// 🔐 Generate JWT token
+
 const generateToken = (email: string, role: string): string => {
   return jwt.sign({ email, role }, process.env.JWT_SECRET!, {
     expiresIn: "1h",
   });
 };
 
-// ✅ Register
+
 export const registerUser = async (req: Request, res: Response) => {
   const { email, password, role } = req.body;
 
@@ -37,12 +37,12 @@ export const registerUser = async (req: Request, res: Response) => {
   }
 };
 
-// ✅ Login
+
 export const loginUser = async (req: Request, res: Response) => {
   const { email, password, role } = req.body;
 
   try {
-    console.log("🔐 Login request:", { email, password, role });
+    console.log(" Login request:", { email, password, role });
 
     const user = await User.findOne({ email, role });
     if (!user) {
@@ -51,18 +51,18 @@ export const loginUser = async (req: Request, res: Response) => {
     }
 
     const isMatch = await bcrypt.compare(password.trim(), user.password);
-    console.log("🔑 Password match:", isMatch);
+    console.log(" Password match:", isMatch);
 
     if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
     const token = generateToken(user.email, user.role);
 
-    // ✅ Add logs to show token in terminal
-    console.log("✅ Login successful!");
-    console.log("🔐 JWT Token generated for user:", user.email);
-    console.log("📦 Token:", token);
-    console.log("👤 Role:", user.role);
-    console.log("🕒 Time:", new Date().toLocaleString());
+    
+    console.log(" Login successful!");
+    console.log(" JWT Token generated for user:", user.email);
+    console.log(" Token:", token);
+    console.log(" Role:", user.role);
+    console.log(" Time:", new Date().toLocaleString());
 
     user.lastLogin = new Date();
     await user.save();
@@ -80,10 +80,10 @@ export const loginUser = async (req: Request, res: Response) => {
 };
 
 
-// ✅ Reset Password
+
 export const resetPassword = async (req: Request, res: Response) => {
   const { email, newPassword } = req.body;
-  console.log("📩 Reset password request received:", { email, newPassword });
+  console.log(" Reset password request received:", { email, newPassword });
 
   try {
     const user = await User.findOne({ email });
@@ -94,7 +94,7 @@ export const resetPassword = async (req: Request, res: Response) => {
 
     await user.save();
 
-    console.log("✅ Password successfully updated for:", email);
+    console.log(" Password successfully updated for:", email);
     res.json({ message: "Password updated successfully" });
   } catch (error) {
     console.error("❌ Reset Password Error:", error);
