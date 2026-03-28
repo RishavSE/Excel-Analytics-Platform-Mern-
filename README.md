@@ -146,7 +146,6 @@ npm run dev
 
 - [ ] Add AI chart insights (Gemini/OpenAI)
 - [ ] Create shareable chart links
-- [ ] Show chart previews before rendering
 
 ---
 
