@@ -1,166 +1,168 @@
-# 📊 Excel Analytics MERN Project
+<h1 align="center">📊 Excel Analytics Platform</h1> <p align="center"> <b>Upload. Analyze. Visualize.</b> </p> <p align="center"> <img src="https://img.shields.io/badge/Frontend-React(Vite)-blue?style=for-the-badge"/> <img src="https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge"/> <img src="https://img.shields.io/badge/Database-MongoDB-green?style=for-the-badge"/> <img src="https://img.shields.io/badge/Charts-Chart.js-orange?style=for-the-badge"/> <img src="https://img.shields.io/badge/Excel-SheetJS-blue?style=for-the-badge"/> <img src="https://img.shields.io/badge/Auth-JWT-red?style=for-the-badge"/> <img src="https://img.shields.io/badge/Security-Bcrypt-purple?style=for-the-badge"/> <img src="https://img.shields.io/badge/Export-PNG|PDF|CSV-success?style=for-the-badge"/> <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"/> </p> <p align="center"> A full-stack MERN application that transforms raw Excel data into powerful visual insights with interactive charts, secure authentication, and admin analytics. </p>
+<h2 align="center">📌 Overview</h2>
 
-A full-stack MERN application to upload Excel files, parse and visualize them using Chart.js with color customization, secure JWT authentication, password reset modal, role-based dashboards (Admin/User), column filtering, X-Y-axis control, chart exports, and advanced admin management.
+The Excel Analytics Platform is a data visualization tool built using the MERN stack, designed to simplify how users interact with Excel data.
 
----
+It allows users to upload .xls/.xlsx files, process them instantly, and generate dynamic charts with customization and export capabilities.
 
-## 🚀 Features
+The platform integrates authentication, role-based dashboards, and admin controls to provide a complete production-level system.
 
-| Feature                          | Description                                                                 |
-|----------------------------------|---------------------------------------------------------------------------- |
-| 📂 Excel Upload                  | Upload `.xls` / `.xlsx` files and preview data                             |
-| 📈 Chart Visualizations          | Bar, Line, and Pie charts using Chart.js                                   |
-| 🎨 Color Customization           | Customize chart colors directly from UI                                    |
-| 📊 Filter by Column & Y-Axis     | Select specific columns and Y-axis for more relevant charts                |
-| 🔐 JWT Authentication            | Secure login/register with bcrypt & JWT                                    |
-| 👥 Role-Based Dashboard          | Redirect users/admins to respective dashboards                             |
-| 🧑‍💼 Admin Dashboard             | View users, delete accounts, see activity stats                              |
-| 🗑️ Delete User                   | Admin can delete any user (removes login access)                           |
-| ✅ User Status                   | See active/inactive status of users                                        |
-| 📊 Upload Statistics             | Total uploads per user + overall total                                     |
-| 🕒 Last Login Info               | View last login timestamp per user                                         |
-| 🔁 Password Reset (Modal)        | Reset password without navigating to a separate page                       |
-| 📤 Export Options                | Export charts to PNG, PDF, or download as CSV                              |
-| 📱 Responsive UI (Normal CSS)    | Fully responsive layout using standard CSS                                 |
+<h2 align="center">🧠 Vision</h2> <p align="center"> <b>Data should be easy to understand, visualize, and act upon.</b> </p>
 
----
+This platform aims to:
 
-## 🖼️ Screenshots
+• Simplify Excel data analysis
+• Enable interactive chart creation
+• Provide secure and role-based access
+• Deliver powerful admin insights
+• Build a scalable analytics system
 
- for view visit:  https://drive.google.com/file/d/1DRKcRLRO8s4aeUGliRVJOMIULY-bfH9V/view?usp=sharing
+<h2 align="center">✨ Platform Highlights</h2>
 
----
+✔ Excel-to-Chart automation
+✔ Interactive chart customization
+✔ Export charts in multiple formats
+✔ Secure authentication system
+✔ Admin analytics dashboard
+✔ Fully responsive UI
 
-## 🛠️ Tech Stack
+<h2 align="center">📂 Excel Processing Engine</h2>
 
-| Layer      | Technology                       |
-|------------|----------------------------------|
-| Frontend   | React (Vite), TypeScript, CSS    |
-| Backend    | Node.js, Express, TypeScript     |
-| Excel      | SheetJS (`xlsx`)                 |
-| Charts     | Chart.js + `react-chartjs-2`     |
-| Auth       | JWT, bcrypt                      |
-| Export     | `html2canvas`, `jspdf`, custom CSV |
-| Database   | MongoDB                          |
+The system efficiently converts Excel data into usable insights.
 
----
+Workflow
 
-## ⚙️ Prerequisites
+• Upload .xls / .xlsx files
+• Parse data using SheetJS (xlsx)
+• Extract structured data
+• Feed into chart engine
 
-- ✅ Node.js (v18+)
-- ✅ MongoDB (local or Atlas)
-- ✅ npm or yarn
+<h2 align="center">📈 Data Visualization Engine</h2>
 
----
+The platform provides dynamic and customizable charting.
 
-## 📦 Backend Setup
+Features
 
-```bash
+• Bar, Line, and Pie charts
+• Select X-axis & Y-axis
+• Filter specific columns
+• Real-time chart rendering
+• Dynamic updates based on user input
+
+<h2 align="center">🎨 Customization & Export System</h2>
+
+Users can personalize and export charts easily.
+
+Capabilities
+
+• Change chart colors
+• Modify labels and axes
+• Export as PNG (via html2canvas)
+• Export as PDF (via jsPDF)
+• Download data as CSV
+
+<h2 align="center">🔐 Authentication & Security</h2>
+
+A secure system built with modern authentication practices.
+
+Features
+
+• JWT-based authentication
+• Password hashing using bcrypt
+• Secure login & registration
+• Password reset via modal
+• Protected routes
+
+<h2 align="center">👥 Role-Based Dashboard</h2>
+User Dashboard
+
+• Upload and visualize Excel files
+• Customize charts
+• Export results
+
+Admin Dashboard
+
+• View all registered users
+• Monitor activity and uploads
+• Delete user accounts
+• Track user status (Active/Inactive)
+• View last login timestamps
+• Export user data (CSV)
+
+<h2 align="center">📊 Analytics & Tracking</h2>
+
+• Total uploads per user
+• Overall system upload stats
+• User activity insights
+• Last login tracking
+
+<h2 align="center">🎨 User Experience</h2>
+
+Designed for simplicity and usability.
+
+Highlights
+
+• Fully responsive layout
+• Clean UI using CSS
+• Fast and smooth interactions
+• Easy navigation
+
+<h2 align="center">🧱 Tech Stack</h2>
+Layer	Technology
+Frontend	React (Vite) + TypeScript
+Backend	Node.js + Express + TypeScript
+Database	MongoDB
+Excel Processing	SheetJS (xlsx)
+Charts	Chart.js + react-chartjs-2
+Authentication	JWT
+Security	Bcrypt
+Export Tools	html2canvas, jsPDF, CSV
+API Calls	Axios
+Styling	CSS
+<h2 align="center">⚡ Architecture Highlights</h2>
+
+• Clean MERN architecture
+• Modular backend structure
+• Efficient Excel parsing pipeline
+• Dynamic chart rendering system
+• Secure authentication flow
+
+<h2 align="center">🧪 Local Setup</h2>
+Backend
 cd mern-auth-secure
 npm install
-```
-
-
-```
-
-```bash
 npm run dev
-```
 
-
-
-## 🌐 Frontend Setup
-
-```bash
+Frontend
 cd frontend
 npm install
 npm run dev
-```
-
-> Visit: [http://localhost:5173](http://localhost:5173)
 
 
-## 🔐 Authentication Flow
+Visit: http://localhost:5173
 
-| Feature              | Implementation                              |
-|----------------------|----------------------------------------------|
-| 🔐 Secure Register   | With bcrypt password hashing                 |
-| 🔑 Login             | JWT-based, stores token in localStorage      |
-| 👥 Role Redirection  | Admin → `/adminpannel1`, User → `/user-dashboard` |
-| 🔁 Reset Password    | Via modal (POST `/reset-password`)           |
+<h2 align="center">📌 Roadmap</h2>
 
----
+• AI-based chart insights (Gemini/OpenAI)
+• Shareable chart links
+• Advanced filtering & analytics
+• Dashboard performance optimization
 
-## 📊 Excel to Chart Flow
+<h2 align="center">🖼️ Demo</h2>
 
-| Step | Action                                      |
-|------|---------------------------------------------|
-| 1️⃣   | Upload `.xls` or `.xlsx` file               |
-| 2️⃣   | Parse it using `xlsx` (SheetJS)             |
-| 3️⃣   | Select relevant columns and Y-axis values   |
-| 4️⃣   | Render chart (Bar/Line/Pie) with Chart.js   |
-| 5️⃣   | Change colors, labels, and chart types      |
-| 6️⃣   | Export chart (PNG, PDF, CSV)                |
+📺 View Project Demo:
+https://drive.google.com/file/d/1DRKcRLRO8s4aeUGliRVJOMIULY-bfH9V/view?usp=sharing
 
----
+<h2 align="center">🤝 Contributing</h2>
 
-## 📤 Export Features
+Contributions are welcome.
 
-| Format   | Tool Used         | Notes                          |
-|----------|-------------------|--------------------------------|
-| 🖼 PNG    | `html2canvas`     | Captures chart as image        |
-| 📄 PDF   | `jspdf`           | Converts image to downloadable PDF |
-| 📑 CSV   | Custom conversion | From parsed Excel data         |
+Steps:
 
----
-
-## 📋 Admin Management Panel
-
-- 🔎 View all registered users with:
-  - Email
-  - Role
-  - Status (Active/Inactive)
-  - Last login
-  - Total uploads
-- 🗑 Delete user accounts (removes login ability)
-- 📈 See upload stats across all users
-- export user status with mail and role in csv form
-
----
-
-## 🧪 Run Project Locally
-
-```bash
-# Terminal 1 - Backend
-cd mern-auth-secure
-npm run dev
-
-# Terminal 2 - Frontend
-cd frontend
-npm run dev
-```
-
----
-
-## 📌  Future Enhancements
-
-- [ ] Add AI chart insights (Gemini/OpenAI)
-- [ ] Create shareable chart links
-
----
-
-## 👨‍💻 Author
-
-**Rishav Kumar Singh**  
-MERN Stack Developer  
-📫 Email: `rishavse06@gmail.com`  
- if any query mail me
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-
+Fork the repository
+Create a feature branch
+Commit your changes
+Submit a pull request
+<h2 align="center">👨‍💻 Developer</h2> <p align="center"> <b>Rishav Kumar Singh</b><br> MERN Stack Developer<br> Data Visualization Enthusiast • Full Stack Builder </p> <p align="center"> 📫 Email: rishavse06@gmail.com </p>
+<h2 align="center">⭐ Final Thought</h2> <p align="center"> This platform is built for users who want to turn raw data into<br><br> <b>insightful • visual • actionable information</b> </p> <p align="center"> 📊 <b>Upload. Analyze. Visualize.</b> </p>
+<h2 align="center">📜 License</h2> <p align="center"> This project is licensed under the <b>MIT License</b>. </p>
