@@ -155,9 +155,9 @@ Contributions are welcome.
 
 Steps:
 
-Fork the repository
-Create a feature branch
-Commit your changes
+Fork the repository<br>
+Create a feature branch<br>
+Commit your changes<br>
 Submit a pull request
 <h2 align="center">👨‍💻 Developer</h2> <p align="center"> <b>Rishav Kumar Singh</b><br> MERN Stack Developer<br> Data Visualization Enthusiast • Full Stack Builder </p> <p align="center"> 📫 Email: rishavse06@gmail.com </p>
 <h2 align="center">⭐ Final Thought</h2> <p align="center"> This platform is built for users who want to turn raw data into<br><br> <b>insightful • visual • actionable information</b> </p> <p align="center"> 📊 <b>Upload. Analyze. Visualize.</b> </p>
