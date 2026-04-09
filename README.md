@@ -148,10 +148,6 @@ Visit: http://localhost:5173
 • Advanced filtering & analytics
 • Dashboard performance optimization
 
-<h2 align="center">🖼️ Demo</h2>
-
-📺 View Project Demo:
-https://drive.google.com/file/d/1DRKcRLRO8s4aeUGliRVJOMIULY-bfH9V/view?usp=sharing
 
 <h2 align="center">🤝 Contributing</h2>
 
