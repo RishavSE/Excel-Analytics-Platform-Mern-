@@ -21,6 +21,8 @@ app.use("/api", uploadRoutes);
 mongoose.connect(process.env.MONGO_URI!)
   .then(() => {
     console.log("✅ MongoDB connected");
-    app.listen(5000, () => console.log(" Backend running on port 5000"));
   })
   .catch((err) => console.error("❌ MongoDB connection failed:", err));
+
+ 
+app.listen(5000, () => console.log(" Backend running on port 5000"));
