@@ -7,7 +7,7 @@ body {
 .login-page {
   display: flex;
   height: 100vh;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -21,12 +21,13 @@ body {
   padding: 40px 0 24px 0;
   box-shadow: 1px 0 8px #c9d6fe25;
 }
+
 .sidebar-img {
-     width: 200px;
-    height: 600px;
-    margin-bottom: 35rem;
-    border-radius: 5rem;
-    margin-top: 4rem;
+  width: 200px;
+  height: 600px;
+  margin-bottom: 35rem;
+  border-radius: 5rem;
+  margin-top: 0.5rem;
 }
 
 .sidebar-header {
@@ -35,23 +36,27 @@ body {
   align-items: center;
   margin-bottom: 24px;
 }
+
 .logo {
   font-size: 2.2rem;
   display: inline-block;
-  margin-bottom: 0; /* remove extra spacing */
+  margin-bottom: 0;
 }
 
 .sidebar-title {
   text-align: center;
   line-height: 1.3;
 }
+
 .sidebar-login {
   font-size: 1.1rem;
 }
+
 .sidebar-app {
   font-weight: 600;
   font-size: 1.2rem;
 }
+
 .sidebar-illustration {
   flex: 1;
   display: flex;
@@ -66,6 +71,7 @@ body {
   justify-content: center;
   background: #f6f8fc;
 }
+
 .login-form {
   background: #fff;
   box-shadow: 0 6px 32px #c9dafe39;
@@ -76,6 +82,7 @@ body {
   flex-direction: column;
   gap: 18px;
 }
+
 .login-title {
   margin: 0;
   font-size: 1.55rem;
@@ -83,6 +90,7 @@ body {
   font-weight: 600;
   letter-spacing: -1px;
 }
+
 .login-title-b {
   margin: 0 0 12px 0;
   font-size: 1.55rem;
@@ -90,6 +98,7 @@ body {
   letter-spacing: -1px;
   font-weight: 600;
 }
+
 .login-input {
   font-size: 1rem;
   padding: 11px 13px;
@@ -99,9 +108,11 @@ body {
   background: #f3f6fb;
   transition: border-color 0.15s;
 }
+
 .login-input:focus {
   border-color: #3976d9;
 }
+
 .role-toggle-container {
   display: flex;
   align-items: center;
@@ -109,15 +120,18 @@ body {
   justify-content: flex-start;
   margin-top: 2px;
 }
+
 .role-option {
   font-size: 1rem;
   color: #6b7280;
   font-weight: 500;
 }
+
 .role-option.admin {
   color: #222a3c;
   font-weight: 600;
 }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -125,11 +139,13 @@ body {
   height: 26px;
   margin: 0 4px;
 }
+
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -141,6 +157,7 @@ body {
   border-radius: 16px;
   transition: .4s;
 }
+
 .slider:before {
   position: absolute;
   content: "";
@@ -153,12 +170,15 @@ body {
   transition: .4s;
   box-shadow: 0 1px 2px #7da6e944;
 }
-input:checked + .slider {
+
+input:checked+.slider {
   background-color: #3976d9;
 }
-input:checked + .slider:before {
+
+input:checked+.slider:before {
   transform: translateX(23px);
 }
+
 .login-button {
   background: #3976d9;
   color: #fff;
@@ -171,16 +191,18 @@ input:checked + .slider:before {
   cursor: pointer;
   transition: background 0.14s;
 }
+
 .login-button:hover {
   background: #2959a5;
 }
+
 .login-links {
   display: flex;
   justify-content: center;
-  flex-direction: column;  /* This makes children stack vertically */
-  align-items: center;     /* Centers them horizontally */
+  flex-direction: column;
+  align-items: center;
   margin-top: 10px;
-  gap: 15px;  
+  gap: 15px;
 }
 
 .signup-wrapper {
@@ -203,6 +225,7 @@ input:checked + .slider:before {
 .signup-link:hover {
   text-decoration: underline;
 }
+
 .forgot-password {
   color: #3976d9;
   font-size: 0.97rem;
@@ -210,9 +233,11 @@ input:checked + .slider:before {
   margin-top: 8px;
   transition: text-decoration 0.15s;
 }
+
 .forgot-password:hover {
   text-decoration: underline;
 }
+
 .signup-link {
   color: #3976d9;
   font-size: 0.97rem;
@@ -290,6 +315,7 @@ input:checked + .slider:before {
   color: green;
   margin-top: 10px;
 }
+
 .forgot-password {
   cursor: pointer;
   color: #0a79df;
@@ -300,30 +326,37 @@ input:checked + .slider:before {
   .login-page {
     flex-direction: column;
   }
+
   .sidebar {
     flex-direction: row;
     width: 100vw;
     height: 135px;
     padding: 20px 0 0 0;
   }
+
   .sidebar-illustration {
     display: none;
   }
+
   .login-form-wrapper {
     padding: 30px 0;
   }
 }
+
 @media (max-width: 650px) {
   .login-form {
     min-width: unset;
     width: 93vw;
     padding: 2rem 0.8rem 2rem 0.8rem;
   }
+
   .sidebar {
     padding: 12px 0 0 0;
     height: 75px;
   }
-  .sidebar-app,.sidebar-login {
+
+  .sidebar-app,
+  .sidebar-login {
     font-size: 1rem;
   }
 }
@@ -366,7 +399,7 @@ input:checked + .slider:before {
 
 .sidebar-illustration {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 .sidebar-text-stack {
@@ -388,8 +421,9 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* space between icon and text */
+  gap: 10px;
 }
-h5{
-  margin-left:76px;
+
+h5 {
+  margin-left: 76px;
 }
