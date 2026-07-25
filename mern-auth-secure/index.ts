@@ -16,7 +16,7 @@ app.use(express.json());
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 app.use("/api", uploadRoutes); 
-
+app.listen(5000, () => console.log(" Backend running on port 5000"));
 
 mongoose.connect(process.env.MONGO_URI!)
   .then(() => {
@@ -25,4 +25,4 @@ mongoose.connect(process.env.MONGO_URI!)
   .catch((err) => console.error("❌ MongoDB connection failed:", err));
 
  
-app.listen(5000, () => console.log(" Backend running on port 5000"));
+
