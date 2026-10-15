@@ -1,10 +1,13 @@
 /* /* Background */
 .signup-page {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
+  height: auto;
   background: linear-gradient(to right, #74ebd5, #acb6e5);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -14,7 +17,7 @@
   padding: 40px 30px;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  width: 360px;
+  width: min(100%, 360px);
 }
 
 /* Title */
@@ -72,14 +75,16 @@
 
 @media (max-width: 768px) {
   .signup-page {
-    padding: 20px;
+    padding: 1rem;
     height: auto;
-    align-items: flex-start;
+    min-height: 100vh;
+    min-height: 100svh;
+    align-items: center;
   }
 
   .signup-box {
-    width: 100%;
-    max-width: 90%;
+    width: min(100%, 360px);
+    max-width: 100%;
     padding: 30px 20px;
   }
 
@@ -123,11 +128,14 @@
 @media (max-width: 768px) {
   .signup-page {
     padding: 2rem 1rem;
+    min-height: 100vh;
+    min-height: 100svh;
+    align-items: center;
   }
 
   .signup-box {
     padding: 2rem 1.5rem;
-    max-width: 90vw;
+    max-width: 100%;
   }
 
   .signup-title {
@@ -146,6 +154,11 @@
 }
 
 @media (max-width: 480px) {
+  .signup-page {
+    padding: 1rem;
+    align-items: center;
+  }
+
   .signup-box {
     padding: 1.5rem 1rem;
     max-width: 95vw;
@@ -187,4 +200,3 @@
 .secondary-btn:hover {
   background-color: #cfcfcf;
 }
-

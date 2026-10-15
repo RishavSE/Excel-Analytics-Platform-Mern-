@@ -452,7 +452,10 @@ body {
 
 .login-page {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -460,7 +463,8 @@ body {
   min-width: 280px;
   max-width: 420px;
   height: auto;
-  min-height: 100vh;
+  min-height: 0;
+  height: 100%;
   padding: 2rem 1.5rem;
 }
 
@@ -524,18 +528,20 @@ body {
 @media (max-width: 850px) {
   .login-page {
     flex-direction: column;
-    height: auto;
-    overflow: visible;
-    overflow-x: hidden;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .sidebar {
     flex: none;
     width: 100%;
+    height: auto;
     min-width: 0;
     max-width: none;
     min-height: 0;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
   }
 
   .sidebar-header {
@@ -548,11 +554,17 @@ body {
 
   .login-form-wrapper {
     flex: 1;
-    padding: 2rem 1rem;
+    min-height: 0;
+    padding: 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .login-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .logo {
     font-size: 1.8rem;
   }
@@ -563,17 +575,35 @@ body {
   }
 
   .login-form-wrapper {
-    padding: 1.25rem 0.75rem;
+    padding: 0.75rem;
   }
 
   .login-form {
-    padding: 1.5rem 1rem;
-    gap: 1rem;
+    padding: 1.1rem 1rem;
+    gap: 0.65rem;
   }
 
   .login-title,
   .login-title-b {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+  }
+
+  .login-title-b {
+    margin-bottom: 0.25rem;
+  }
+
+  .login-input {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .login-button {
+    margin-top: 0.25rem;
+    padding: 0.65rem;
+  }
+
+  .login-links {
+    margin-top: 0.25rem;
+    gap: 0.5rem;
   }
 
   .signup-wrapper {
@@ -583,5 +613,11 @@ body {
 
   .modal {
     padding: 1.25rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .login-page {
+    overflow-y: auto;
   }
 }
