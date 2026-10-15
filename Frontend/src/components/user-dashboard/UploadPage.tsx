@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFileExcel } from "react-icons/fa";
 
-//  Base URL - auto switch between local and hosted
+
 const API_BASE_URL =
   import.meta.env.VITE_API_URL || "https://excel-analytics-platform-mern.onrender.com";
 
