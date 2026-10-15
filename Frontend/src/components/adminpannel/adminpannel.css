@@ -552,6 +552,7 @@
   .sideba {
     flex: none;
     width: 100%;
+    flex-direction: column;
     padding: 0.65rem 0.75rem;
     border-radius: 0;
     align-items: stretch;
@@ -581,6 +582,7 @@
 
   .sideba.is-open .user-info {
     display: block;
+    width: 100%;
     margin: 0.65rem 0;
     overflow-wrap: anywhere;
   }
