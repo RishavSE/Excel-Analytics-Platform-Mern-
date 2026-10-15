@@ -35,7 +35,26 @@ router.post(
     const workbook = xlsx.read(file.buffer, { type: "buffer" });
     const sheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[sheetName];
-    const jsonData = xlsx.utils.sheet_to_json(worksheet);
+    const worksheetRows = xlsx.utils.sheet_to_json<unknown[]>(worksheet, {
+      header: 1,
+      blankrows: true,
+      defval: "",
+    });
+    const headerRowIndex = worksheetRows.findIndex(
+      (row) => row.filter((value) => String(value).trim() !== "").length >= 2
+    );
+
+    if (headerRowIndex === -1) {
+      return res.status(400).json({ error: "No tabular data with at least two columns was found" });
+    }
+
+    const worksheetRange = xlsx.utils.decode_range(worksheet["!ref"] || "A1");
+    const jsonData = xlsx.utils.sheet_to_json(worksheet, {
+      range: {
+        s: { ...worksheetRange.s, r: worksheetRange.s.r + headerRowIndex },
+        e: worksheetRange.e,
+      },
+    });
 
     const newUpload = new Upload({
       email,
