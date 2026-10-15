@@ -47,12 +47,13 @@
 // export default Sideb;
 
 
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaChartBar, FaFileUpload, FaSignOutAlt } from "react-icons/fa";
+import { FaBars, FaChartBar, FaFileUpload, FaSignOutAlt, FaTimes } from "react-icons/fa";
 
 const Sideb: React.FC = () => {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const email = localStorage.getItem("email");
   const role = localStorage.getItem("role");
@@ -63,8 +64,20 @@ const Sideb: React.FC = () => {
   };
 
   return (
-    <aside className="user-sidebar">
-      <h2 className="user-sidebar-title">📊 Excel Analytics</h2>
+    <aside className={`user-sidebar${isMenuOpen ? " is-open" : ""}`}>
+      <div className="user-sidebar-header">
+        <h2 className="user-sidebar-title">📊 Excel Analytics</h2>
+        <button
+          type="button"
+          className="user-menu-toggle"
+          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="user-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
 
       <div className="user-sidebar-profile">
         <div className="user-sidebar-role">
@@ -75,16 +88,16 @@ const Sideb: React.FC = () => {
         </div>
       </div>
 
-      <ul style={{ listStyle: "none", padding: 0, width: "100%" }}>
+      <ul id="user-navigation" className="user-navigation">
         {navItems.map((item, index) => (
           <li key={index}>
             {item.label === "Logout" ? (
               <button
-                onClick={handleLogout}
-                className="user-sidebar-link user-sidebar-logout"
-                style={{
-                  ...linkStyle,
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  handleLogout();
                 }}
+                className="user-sidebar-link user-sidebar-logout"
               >
                 {item.icon}
                 <span>{item.label}</span>
@@ -93,6 +106,7 @@ const Sideb: React.FC = () => {
               <NavLink
                 to={item.path}
                 className="user-sidebar-link"
+                onClick={() => setIsMenuOpen(false)}
                 style={({ isActive }) => ({
                   ...linkStyle,
                   textDecoration: "none",
@@ -115,7 +129,6 @@ const linkStyle: React.CSSProperties = {
   display: "flex",
   alignItems: "center",
   gap: "10px",
-  marginBottom: "1rem",
 };
 
 const navItems = [

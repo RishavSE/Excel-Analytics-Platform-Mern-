@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API } from "../api/api";
 import { Link } from "react-router-dom";
@@ -44,12 +44,20 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth(); //  Context login function
 
+  useEffect(() => {
+    if (!error) return;
+
+    const timeoutId = window.setTimeout(() => setError(""), 3000);
+    return () => window.clearTimeout(timeoutId);
+  }, [error]);
+
   const handleRoleToggle = () => {
     setRole(role === "user" ? "admin" : "user");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
     try {
       const res = await API.post("/login", { email, password, role });
       const { token, role: returnedRole } = res.data;

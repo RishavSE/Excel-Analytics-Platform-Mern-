@@ -431,6 +431,7 @@
 
 @media (max-width: 650px) {
   .admin-panel-container {
+    flex-direction: column;
     width: 100%;
     margin: 0;
     border-radius: 0;
@@ -514,5 +515,108 @@
 
   .users-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.sideba-header {
+  width: 100%;
+}
+
+.admin-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: #1976d2;
+  color: #fff;
+}
+
+.sideba-nav-link {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .admin-panel-container {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .sideba {
+    flex: none;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0;
+    align-items: stretch;
+  }
+
+  .sideba-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+  }
+
+  .sideba-title {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .admin-menu-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
+  .sideba .user-info,
+  .sideba .sideba-nav {
+    display: none;
+  }
+
+  .sideba.is-open .user-info {
+    display: block;
+    margin: 0.65rem 0;
+    overflow-wrap: anywhere;
+  }
+
+  .sideba.is-open .sideba-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    overflow: visible;
+  }
+
+  .sideba-nav-link,
+  .sideba .logout-button {
+    flex: none;
+    width: 100%;
+    margin: 0;
+    padding: 0.7rem;
+    border-radius: 8px;
+  }
+
+  .admin-panel-main-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin-panel-main-content {
+    padding: 0.75rem;
+  }
+
+  .users-section-dark {
+    padding: 0.75rem;
+  }
+
+  .table-container {
+    max-width: 100%;
   }
 }
