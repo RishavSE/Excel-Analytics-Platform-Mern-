@@ -48,35 +48,11 @@ const UploadPage: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <div
-        onClick={handleClick}
-        style={{
-          width: "350px",
-          height: "300px",
-          backgroundColor: "#fff",
-          border: "2px dashed #007bff",
-          borderRadius: "12px",
-          cursor: "pointer",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-          transition: "0.3s",
-        }}
-      >
+    <section className="upload-page">
+      <div className="upload-card" onClick={handleClick}>
         <FaFileExcel size={64} color="#28a745" />
-        <h3 style={{ marginTop: "1rem", color: "#333" }}>Click to upload Excel</h3>
-        <p style={{ fontSize: "0.9rem", color: "#777" }}>Supports .xlsx & .xls files</p>
+        <h3>Click to upload Excel</h3>
+        <p>Supports .xlsx &amp; .xls files</p>
         <input
           type="file"
           accept=".xlsx,.xls"
@@ -86,7 +62,7 @@ const UploadPage: React.FC = () => {
         />
       </div>
       <ToastContainer position="top-center" />
-    </div>
+    </section>
   );
 };
 

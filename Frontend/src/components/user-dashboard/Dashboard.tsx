@@ -69,6 +69,7 @@ const Dashboard: React.FC = () => {
         {recentUploads.length === 0 ? (
           <p>No uploads yet. Please upload an Excel file.</p>
         ) : (
+          <div className="dashboard-table-wrapper">
           <table>
             <thead>
               <tr>
@@ -97,6 +98,7 @@ const Dashboard: React.FC = () => {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
     </div>

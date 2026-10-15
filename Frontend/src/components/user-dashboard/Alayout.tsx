@@ -8,9 +8,9 @@ import Setting from "./Setting";
 
 const Alayout = () => {
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div className="user-dashboard-layout">
       <Sidebar />
-      <div style={{ flex: 1, padding: "1rem" }}>
+      <main className="user-dashboard-content">
         <Routes>
           <Route path="/" element={<Navigate to="home" />} />
           <Route path="home" element={<Dashboard />} />
@@ -18,7 +18,7 @@ const Alayout = () => {
           <Route path="chart-builder" element={<ChartBuilder />} />
           <Route path="settings" element={<Setting />} />
         </Routes>
-      </div>
+      </main>
     </div>
   );
 };

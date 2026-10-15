@@ -143,6 +143,7 @@
 }
 .data-table {
   width: 100%;
+  min-width: 620px;
   border-collapse: collapse;
 }
 .data-table th, .data-table td {
@@ -366,4 +367,152 @@
 .role-user {
   color: #16eb20;
   font-weight: bold;
+}
+
+.admin-panel-container {
+  width: calc(100% - 48px);
+  min-width: 0;
+}
+
+.sideba {
+  flex: 0 0 230px;
+  min-width: 0;
+}
+
+.admin-panel-main-content {
+  min-width: 0;
+}
+
+.admin-panel-cards-row {
+  flex-wrap: wrap;
+}
+
+.top-cards {
+  flex: 1 1 600px;
+  flex-wrap: wrap;
+}
+
+.top-card {
+  flex: 1 1 180px;
+}
+
+.logout-button {
+  width: calc(100% - 32px);
+  margin-left: 16px;
+}
+
+.users-section-dark {
+  min-width: 0;
+}
+
+.user-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 950px) {
+  .admin-panel-container {
+    width: calc(100% - 24px);
+    margin: 12px;
+  }
+
+  .admin-panel-main-content {
+    padding: 1.25rem;
+  }
+
+  .admin-panel-cards-row {
+    align-items: stretch;
+  }
+
+  .export-btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-panel-container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .sideba {
+    flex: none;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+    align-items: stretch;
+  }
+
+  .sideba-title {
+    margin-bottom: 0.75rem;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .user-info {
+    margin-bottom: 0.75rem;
+  }
+
+  .sideba-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow-x: auto;
+  }
+
+  .sideba-nav-link {
+    flex: 0 0 auto;
+    padding: 0.7rem 0.8rem;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+
+  .logout-button {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+    padding: 0.7rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  .admin-panel-main-content {
+    padding: 1rem;
+  }
+
+  .section-title {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .users-section-dark {
+    min-height: 0;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin-panel-main-content {
+    padding: 0.75rem;
+  }
+
+  .top-cards {
+    flex-basis: 100%;
+  }
+
+  .top-card {
+    flex-basis: 100%;
+  }
+
+  .top-card-value {
+    font-size: 1.25rem;
+  }
+
+  .export-btn {
+    width: 100%;
+  }
+
+  .users-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

@@ -175,7 +175,7 @@ const ChartBuilder: React.FC = () => {
   const uniqueFilterValues = [...new Set(data.map(item => item[filterColumn]))];
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="chart-builder-page">
       <h2>📊 <span style={{ color: "#333" }}>Chart Builder</span></h2>
 
       {columns.length === 0 ? (
@@ -285,6 +285,7 @@ const ChartBuilder: React.FC = () => {
 
           <div
             ref={chartRef}
+            className="chart-preview"
             style={{
               backgroundColor: "#fff",
               padding: "1rem",
@@ -297,7 +298,7 @@ const ChartBuilder: React.FC = () => {
             {renderChart()}
           </div>
 
-          <div style={{ marginTop: "1rem" }}>
+          <div className="chart-export-actions">
             <button className="custom-btn" onClick={handleExportPNG}>📤 Export PNG</button>
             <button className="custom-btn" onClick={handleExportPDF} style={{ marginLeft: "1rem" }}>📄 Export PDF</button>
             <button className="custom-btn" onClick={handleExportCSV} style={{ marginLeft: "1rem" }}>📥 Download CSV</button>

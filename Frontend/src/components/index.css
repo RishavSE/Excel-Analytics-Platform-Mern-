@@ -427,3 +427,161 @@ input:checked+.slider:before {
 h5 {
   margin-left: 76px;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 min(34vw, 420px);
+  min-width: 280px;
+  max-width: 420px;
+  height: auto;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.sidebar-header,
+.sidebar-illustration {
+  width: 100%;
+}
+
+.sidebar-illustration {
+  flex: 1;
+  min-height: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-text-stack {
+  margin: 1rem 0;
+}
+
+.sidebar-text-stack p {
+  margin: 0.35rem 0;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.sidebar-img {
+  display: block;
+  width: min(100%, 240px);
+  height: auto;
+  max-height: 35vh;
+  margin: 1rem auto 0;
+  border-radius: 1rem;
+  object-fit: contain;
+}
+
+.sidebar-illustration h5 {
+  margin: 0.75rem 0 0;
+  text-align: center;
+}
+
+.login-form-wrapper {
+  min-width: 0;
+  padding: 2rem;
+}
+
+.login-form {
+  width: min(100%, 420px);
+  min-width: 0;
+}
+
+.modal {
+  width: min(100%, 350px);
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+.modal input {
+  max-width: 100%;
+}
+
+@media (max-width: 850px) {
+  .login-page {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .sidebar-header {
+    margin: 0;
+  }
+
+  .sidebar-illustration {
+    display: none;
+  }
+
+  .login-form-wrapper {
+    flex: 1;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .sidebar-app,
+  .sidebar-login {
+    font-size: 0.95rem;
+  }
+
+  .login-form-wrapper {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .login-form {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .login-title,
+  .login-title-b {
+    font-size: 1.35rem;
+  }
+
+  .signup-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .modal {
+    padding: 1.25rem;
+  }
+}

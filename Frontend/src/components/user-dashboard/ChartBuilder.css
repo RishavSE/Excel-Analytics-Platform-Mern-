@@ -13,7 +13,7 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-label {
+.chart-builder-page label {
   font-weight: 600;
   margin-bottom: 6px;
   color: #222;
@@ -38,7 +38,7 @@ label {
   background-color: #fff;
 }
 
-input[type="checkbox"] {
+.chart-builder-page input[type="checkbox"] {
   margin-right: 5px;
   transform: scale(1.1);
   cursor: pointer;
@@ -57,4 +57,67 @@ input[type="checkbox"] {
 
 .custom-btn:hover {
   background-color: #524ae0;
+}
+
+.chart-builder-page {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(0.75rem, 3vw, 2rem);
+}
+
+.chart-controls {
+  gap: clamp(0.75rem, 2vw, 2rem);
+}
+
+.chart-controls > .control-group {
+  flex: 1 1 180px;
+  min-width: min(100%, 180px);
+}
+
+.chart-builder-page .custom-select,
+.chart-builder-page .custom-btn {
+  max-width: 100%;
+}
+
+.chart-builder-page .custom-select {
+  min-width: 0;
+}
+
+.chart-preview {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.chart-preview canvas {
+  max-width: 100%;
+}
+
+.chart-export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.chart-export-actions .custom-btn {
+  margin-left: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .chart-builder-page h2 {
+    font-size: 1.25rem;
+  }
+
+  .chart-controls {
+    padding: 0.75rem;
+  }
+
+  .chart-controls > .control-group {
+    flex-basis: 100%;
+  }
+
+  .chart-export-actions .custom-btn {
+    flex: 1 1 100%;
+  }
 }
