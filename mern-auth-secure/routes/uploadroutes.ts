@@ -6,19 +6,19 @@ import { getUploadsByEmail } from "../controllers/uploadcontroller";
 
 const router = express.Router();
 
-// ✅ Multer setup: use memory storage for Excel parsing
+//  Multer setup: use memory storage for Excel parsing
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-// ✅ Custom type for request with file
+//  Custom type for request with file
 interface CustomRequest extends Request {
   file?: Express.Multer.File;
 }
 
-// ✅ GET uploads by email
+//  GET uploads by email
 router.get("/uploads", getUploadsByEmail);
 
-// ✅ POST: upload and parse Excel
+//  POST: upload and parse Excel
 router.post(
   "/upload",
   upload.single("file") as unknown as express.RequestHandler,
@@ -67,35 +67,35 @@ router.post(
     await newUpload.save();
 
     res.status(200).json({
-      message: "✅ Upload successful",
+      message: " Upload successful",
       rows: jsonData.length,
       data: jsonData,
     });
   } catch (err) {
-    console.error("❌ Upload error:", err);
+    console.error(" Upload error:", err);
     res.status(500).json({ error: "Upload failed" });
   }
 });
-// ✅ Count total uploads (for admin dashboard)
+//  Count total uploads (for admin dashboard)
 router.get("/uploads-count", async (req: Request, res: Response) => {
   try {
     const count = await Upload.countDocuments(); // total number of documents
     res.status(200).json({ count });
   } catch (err) {
-    console.error("❌ Count error:", err);
+    console.error(" Count error:", err);
     res.status(500).json({ error: "Failed to count uploads" });
   }
 });
 
 
-// ✅ DELETE: remove upload by ID
+//  DELETE: remove upload by ID
 router.delete("/uploads/:id", async (req: Request, res: Response) => {
   try {
     const deleted = await Upload.findByIdAndDelete(req.params.id);
     if (!deleted) {
       return res.status(404).json({ error: "Upload not found" });
     }
-    res.status(200).json({ message: "✅ Upload deleted successfully" });
+    res.status(200).json({ message: " Upload deleted successfully" });
   } catch (err) {
     console.error("❌ Delete error:", err);
     res.status(500).json({ error: "Failed to delete upload" });

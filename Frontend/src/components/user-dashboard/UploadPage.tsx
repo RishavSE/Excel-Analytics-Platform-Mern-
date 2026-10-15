@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFileExcel } from "react-icons/fa";
 
-// ✅ Base URL - auto switch between local and hosted
+//  Base URL - auto switch between local and hosted
 const API_BASE_URL =
   import.meta.env.VITE_API_URL || "https://excel-analytics-platform-mern.onrender.com";
 
@@ -38,12 +38,12 @@ const UploadPage: React.FC = () => {
       const previousUploads = JSON.parse(localStorage.getItem("recentUploads") || "[]");
       localStorage.setItem("recentUploads", JSON.stringify([newFileData, ...previousUploads]));
 
-      toast.success("✅ File uploaded successfully!");
+      toast.success(" File uploaded successfully!");
 
       setTimeout(() => navigate("/user-dashboard/home"), 1500);
     } catch (error) {
-      console.error("❌ Upload failed:", error);
-      toast.error("❌ Upload failed. Please try again.");
+      console.error(" Upload failed:", error);
+      toast.error(" Upload failed. Please try again.");
     }
   };
 

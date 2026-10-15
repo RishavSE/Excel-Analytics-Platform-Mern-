@@ -14,6 +14,8 @@ import { Bar, Line, Pie } from "react-chartjs-2";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { SketchPicker } from "react-color";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./ChartBuilder.css";
 
 ChartJS.register(
@@ -62,14 +64,14 @@ const ChartBuilder: React.FC = () => {
           const numericCols = cols.filter(col => isNumericColumn(col, parsed));
           setNumericColumns(numericCols);
         } else {
-          alert("Invalid file format. Please re-upload.");
+          toast.error("Invalid file format. Please re-upload.");
         }
       } catch (err) {
         console.error("Error parsing stored Excel data:", err);
-        alert("Could not load chart data. Please re-upload the file.");
+        toast.error("Could not load chart data. Please re-upload the file.");
       }
     } else {
-      alert("No file selected. Please go to Dashboard and choose a file.");
+      toast.info("No file selected. Please go to Dashboard and choose a file.");
     }
   }, []);
 
@@ -84,11 +86,15 @@ const ChartBuilder: React.FC = () => {
 
   useEffect(() => {
     if (filteredData.length > 1000) {
-      alert("⚠️ Large dataset detected. Rendering/export may be slow.");
+      toast.warning("Large dataset detected. Rendering/export may be slow.", {
+        toastId: "large-dataset-warning",
+      });
     }
 
     if (chartType === "Pie" && filteredData.length > 25) {
-      alert("⚠️ Too many pie slices (25+). Consider filtering or switching chart type.");
+      toast.warning("Too many pie slices (25+). Consider filtering or switching chart type.", {
+        toastId: "pie-slice-warning",
+      });
     }
   }, [filteredData, chartType]);
 
@@ -176,6 +182,16 @@ const ChartBuilder: React.FC = () => {
 
   return (
     <div className="chart-builder-page">
+      <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        style={{ width: "min(calc(100vw - 2rem), 420px)" }}
+      />
       <h2>📊 <span style={{ color: "#333" }}>Chart Builder</span></h2>
 
       {columns.length === 0 ? (

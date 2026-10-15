@@ -14,7 +14,7 @@ export const getUploadsByEmail = async (req: Request, res: Response) => {
     const uploads = await Upload.find({ email }).sort({ date: -1 });
     res.json(uploads);
   } catch (err) {
-    console.error("❌ Upload fetch error:", err);
+    console.error("Upload fetch error:", err);
     res.status(500).json({ error: "Failed to fetch uploads" });
   }
 };

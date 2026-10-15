@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import API from "../../api/api";
 import "./App.css";
 
@@ -23,6 +25,7 @@ const Dashboard: React.FC = () => {
         setRecentUploads(res.data);
       } catch (error) {
         console.error("❌ Failed to fetch uploads:", error);
+        toast.error("Failed to load uploads. Please try again.");
       }
     };
 
@@ -31,7 +34,7 @@ const Dashboard: React.FC = () => {
 
   const handleParseAndChart = (file: UploadFile) => {
     if (!file?.data || !Array.isArray(file.data)) {
-      alert("The selected file has no valid data. Please re-upload.");
+      toast.error("The selected file has no valid data. Please re-upload.");
       return;
     }
 
@@ -40,7 +43,7 @@ const Dashboard: React.FC = () => {
       navigate("/user-dashboard/chart-builder");
     } catch (error) {
       console.error("❌ Failed to store excel data:", error);
-      alert("Something went wrong while preparing chart data.");
+      toast.error("Something went wrong while preparing chart data.");
     }
   };
 
@@ -53,12 +56,22 @@ const Dashboard: React.FC = () => {
       setRecentUploads(prev => prev.filter(file => file._id !== id));
     } catch (error) {
       console.error("❌ Failed to delete upload:", error);
-      alert("Could not delete upload. Please try again.");
+      toast.error("Could not delete upload. Please try again.");
     }
   };
 
   return (
     <div className="dashboard">
+      <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        style={{ width: "min(calc(100vw - 2rem), 420px)" }}
+      />
       <div className="dashboard-header">
         <h1>📂 Dashboard</h1>
       </div>
